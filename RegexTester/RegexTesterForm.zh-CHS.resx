@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonExit.Text" xml:space="preserve">
+    <value>退出程序</value>
+  </data>
+  <data name="MatchesButton.Text" xml:space="preserve">
+    <value>多次匹配</value>
+  </data>
+  <data name="SplitButton.Text" xml:space="preserve">
+    <value>拆分构造</value>
+  </data>
+  <data name="ReplaceButton.Text" xml:space="preserve">
+    <value>替换构造</value>
+  </data>
+  <data name="TestRegexButton.Text" xml:space="preserve">
+    <value>匹配结果</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ExplicitCaptureChkBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ExplicitCaptureChkBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="ExplicitCaptureChkBox.Text" xml:space="preserve">
+    <value>直接捕获</value>
+  </data>
+  <data name="ExplicitCaptureChkBox.ToolTip" xml:space="preserve">
+    <value>指定唯一有效的捕获是显式命名或编号的 (?&lt;name&gt;…) 形式的组。这
+允许圆括号充当非捕获组，从而避免了由 (?:…) 导致的语法上的笨拙。</value>
+  </data>
+  <data name="IgnorePatternWhitespaceChkBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IgnorePatternWhitespaceChkBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 3</value>
+  </data>
+  <data name="IgnorePatternWhitespaceChkBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 16</value>
+  </data>
+  <data name="IgnorePatternWhitespaceChkBox.Text" xml:space="preserve">
+    <value>忽略类空白</value>
+  </data>
+  <data name="IgnorePatternWhitespaceChkBox.ToolTip" xml:space="preserve">
+    <value>指定从模式中排除非转义空白并启用数字符号 (#) 后
+面的注释。请注意，空白永远不会从字符类中消除。</value>
+  </data>
+  <data name="IgnoreCaseChkBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IgnoreCaseChkBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 3</value>
+  </data>
+  <data name="IgnoreCaseChkBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 16</value>
+  </data>
+  <data name="IgnoreCaseChkBox.Text" xml:space="preserve">
+    <value>忽略大小写</value>
+  </data>
+  <data name="SingleLineChkBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SingleLineChkBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 3</value>
+  </data>
+  <data name="SingleLineChkBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="SingleLineChkBox.Text" xml:space="preserve">
+    <value>单行模式</value>
+  </data>
+  <data name="SingleLineChkBox.ToolTip" xml:space="preserve">
+    <value>指定单行模式。更改句点字符 (.) 的含义，以使它
+与每个字符（而不是除 \n 之外的所有字符）匹配。</value>
+  </data>
+  <data name="ECMAScriptChkBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ECMAScriptChkBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 25</value>
+  </data>
+  <data name="ECMAScriptChkBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 16</value>
+  </data>
+  <data name="ECMAScriptChkBox.Text" xml:space="preserve">
+    <value>ECMAScript匹配行为</value>
+  </data>
+  <data name="ECMAScriptChkBox.ToolTip" xml:space="preserve">
+    <value>指定已为表达式启用了符合 ECMAScript 的行为。此选项仅可与 IgnoreCase 和 
+Multiline 标志一起使用。将 ECMAScript 同任何其他标志一起使用将导致异常。</value>
+  </data>
+  <data name="MultiLineChkBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MultiLineChkBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 25</value>
+  </data>
+  <data name="MultiLineChkBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="MultiLineChkBox.Text" xml:space="preserve">
+    <value>多行模式</value>
+  </data>
+  <data name="MultiLineChkBox.ToolTip" xml:space="preserve">
+    <value>指定多行模式。更改 ^ 和 $ 的含义，以使它们分别与任何行
+的开头和结尾匹配，而不只是与整个字符串的开头和结尾匹配。</value>
+  </data>
+  <data name="RightToLeftChkBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RightToLeftChkBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 25</value>
+  </data>
+  <data name="RightToLeftChkBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="RightToLeftChkBox.Text" xml:space="preserve">
+    <value>反向搜索</value>
+  </data>
+  <data name="RightToLeftChkBox.ToolTip" xml:space="preserve">
+    <value>    指定搜索是从右向左而不是从左向右进行的。具有此选项的正则表达式将移动到起始
+位置的左边而不是右边。（因此，起始位置应指定为字符串的结尾而不是开头。）为了避
+免构造具有无限循环的正则表达式的可能性，此选项不能在中流指定。但是，(?&lt;) 回顾
+后发构造提供了可用作子表达式的类似替代物。
+    RightToLeft 只更改搜索方向。它不会反转所搜索的子字符串。预测先行和回顾后发
+断言不改变：预测先行向右搜索；回顾后发向左搜索。</value>
+  </data>
+  <data name="OptionsGroup.Text" xml:space="preserve">
+    <value>正则表达式选项：</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>匹配结果：</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 12</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>替换表达式：</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 12</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>所需匹配文本内容：</value>
+  </data>
+  <data name="RegularExpressionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 12</value>
+  </data>
+  <data name="RegularExpressionLabel.Text" xml:space="preserve">
+    <value>正则表达式：</value>
+  </data>
+  <data name="toolStripButtonEnglish.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAgxJREFUOE+lkvtL
+        U2EYx+0PEbtpFwnBKPGKiJImGP0gYhIYs1E5GF5gIxkpA00JRSmMEF0ohMh+GaRWYlqabMVcNdS2QpaI
+        VqiDIYhk397vA6fXhCjyhYdzeM/5fp7vczkAdeL2cwho7v/wWzT1zcN+Pwhr51uY2/y41PQaF+wzKKiZ
+        QvaN58g0jyLd5KEUcQbg+84P/Cm2tncQjW3j68YWIqubCC3FcOJc478BAuGoZM6zvoRnakXEruEIjhc4
+        /g5gZop9c+voGAyLbQIfeBZxLL9BA1jzXvuGbWamuKh+GmmVbswE19A59FEBbmoAG7YbsLtm2mZmiml9
+        cvabNDwpz6YB7LYBoMXCumkJr7LOmnnHzBQ/9X2Bo2cOibm1GsBREbAQiYmw/8lnuCeWkVzcgnZlnw1j
+        3HV/wuNXK6i/9x5Hc6wawDlTXHbLJ+LZUBQPRyKwdQdxutwl1h+NLXHh5Ht1ewBHsiwawCW57HyDAfWR
+        dvl0uhZQ1eqX8aVc7EKLqrum651ATLf9OJx5XQM4KmY0xPzZ0hFAiQJnXB0WwME0E3IsL5B17ZlADqWb
+        NYDrOepdlcysmTWWOrxqbceRWtaLk0VO1XW72D5Vckd2gMBfq8zdpmUG62NJvKM4+XyziDk24xmfWoGE
+        s1c0gHPmbrPTpHNJKOCo2G1mZs20zcwUJ5yp1AB5+8/zEwgF5GMVDxh4AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButtonLocal.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAgxJREFUOE+lkvtL
+        U2EYx+0PEbtpFwnBKPGKiJImGP0gYhIYs1E5GF5gIxkpA00JRSmMEF0ohMh+GaRWYlqabMVcNdS2QpaI
+        VqiDIYhk397vA6fXhCjyhYdzeM/5fp7vczkAdeL2cwho7v/wWzT1zcN+Pwhr51uY2/y41PQaF+wzKKiZ
+        QvaN58g0jyLd5KEUcQbg+84P/Cm2tncQjW3j68YWIqubCC3FcOJc478BAuGoZM6zvoRnakXEruEIjhc4
+        /g5gZop9c+voGAyLbQIfeBZxLL9BA1jzXvuGbWamuKh+GmmVbswE19A59FEBbmoAG7YbsLtm2mZmiml9
+        cvabNDwpz6YB7LYBoMXCumkJr7LOmnnHzBQ/9X2Bo2cOibm1GsBREbAQiYmw/8lnuCeWkVzcgnZlnw1j
+        3HV/wuNXK6i/9x5Hc6wawDlTXHbLJ+LZUBQPRyKwdQdxutwl1h+NLXHh5Ht1ewBHsiwawCW57HyDAfWR
+        dvl0uhZQ1eqX8aVc7EKLqrum651ATLf9OJx5XQM4KmY0xPzZ0hFAiQJnXB0WwME0E3IsL5B17ZlADqWb
+        NYDrOepdlcysmTWWOrxqbceRWtaLk0VO1XW72D5Vckd2gMBfq8zdpmUG62NJvKM4+XyziDk24xmfWoGE
+        s1c0gHPmbrPTpHNJKOCo2G1mZs20zcwUJ5yp1AB5+8/zEwgF5GMVDxh4AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButtonLocal.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonLocal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 22</value>
+  </data>
+  <data name="toolStripButtonLocal.Text" xml:space="preserve">
+    <value>本地</value>
+  </data>
+  <data name="toolStripApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 25</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>正则表达式编辑器</value>
+  </data>
+</root>
