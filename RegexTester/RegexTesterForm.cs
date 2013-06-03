@@ -17,7 +17,7 @@ namespace Jiuyong
 	public partial class RegexTesterForm : Form
 	{
 		bool contentChanged = false;
-		ToolStripButton[] languageButtons = new ToolStripButton[2];
+		ToolStripButton[] languageButtons = new ToolStripButton[3];
 
 		public RegexTesterForm()
 		{
@@ -26,8 +26,14 @@ namespace Jiuyong
 			//语言按钮数据初始化。
 			toolStripButtonNative.Tag = CultureInfo.InstalledUICulture;
 			toolStripButtonNative.Text = CultureInfo.InstalledUICulture.NativeName;
+
+			var chinese = CultureInfo.GetCultureInfo("zh-Hans");
+			toolStripButtonChinese.Tag = chinese;
+			toolStripButtonChinese.Text = chinese.NativeName;
+
 			languageButtons[0] = toolStripButtonNative;
 			languageButtons[1] = toolStripButtonEnglish;
+			languageButtons[2] = toolStripButtonChinese;
 
 		}
 

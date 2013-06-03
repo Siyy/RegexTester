@@ -76,6 +76,7 @@ namespace Jiuyong
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButtonEnglish = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButtonNative = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonChinese = new System.Windows.Forms.ToolStripButton();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -291,6 +292,7 @@ namespace Jiuyong
             this.LockToolStripButton,
             this.toolStripSeparator3,
             this.toolStripButtonEnglish,
+            this.toolStripButtonChinese,
             this.toolStripButtonNative});
 			this.toolStripApplication.Name = "toolStripApplication";
 			// 
@@ -432,6 +434,13 @@ namespace Jiuyong
 			resources.ApplyResources(this.toolStripButtonNative, "toolStripButtonNative");
 			this.toolStripButtonNative.Click += new System.EventHandler(this.toolStripButtonLanguage_Click);
 			// 
+			// toolStripButtonChinese
+			// 
+			this.toolStripButtonChinese.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripButtonChinese.Name = "toolStripButtonChinese";
+			resources.ApplyResources(this.toolStripButtonChinese, "toolStripButtonChinese");
+			this.toolStripButtonChinese.Click += new System.EventHandler(this.toolStripButtonLanguage_Click);
+			// 
 			// openFileDialog
 			// 
 			this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
@@ -446,8 +455,8 @@ namespace Jiuyong
 			resources.ApplyResources(this, "$this");
 			this.Controls.Add(this.toolStripContainer1);
 			this.Name = "RegexTesterForm";
-			this.Load += new System.EventHandler(this.Form_Load);
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
+			this.Load += new System.EventHandler(this.Form_Load);
 			this.toolStripContainer1.ContentPanel.ResumeLayout(false);
 			this.toolStripContainer1.ContentPanel.PerformLayout();
 			this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -510,6 +519,7 @@ namespace Jiuyong
 		private ToolStripSeparator toolStripSeparator3;
 		private ToolStripButton toolStripButtonNative;
 		private ToolStripButton toolStripButtonEnglish;
+		private ToolStripButton toolStripButtonChinese;
 
 	}
 }
