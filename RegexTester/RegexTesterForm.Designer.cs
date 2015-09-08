@@ -35,6 +35,8 @@ namespace Jiuyong
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegexTesterForm));
 			this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+			this.NextMatchLabel = new System.Windows.Forms.Label();
+			this.MatchFoundLabel = new System.Windows.Forms.Label();
 			this.RegexTextBox = new System.Windows.Forms.RichTextBox();
 			this.buttonExit = new System.Windows.Forms.Button();
 			this.MatchesButton = new System.Windows.Forms.Button();
@@ -57,6 +59,7 @@ namespace Jiuyong
 			this.label2 = new System.Windows.Forms.Label();
 			this.RegularExpressionLabel = new System.Windows.Forms.Label();
 			this.InputTextBox = new System.Windows.Forms.RichTextBox();
+			this.NoMatchFoundLabel = new System.Windows.Forms.Label();
 			this.toolStripApplication = new System.Windows.Forms.ToolStrip();
 			this.NewToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.OpenToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -75,8 +78,8 @@ namespace Jiuyong
 			this.LockToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButtonEnglish = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButtonNative = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButtonChinese = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonNative = new System.Windows.Forms.ToolStripButton();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -94,6 +97,8 @@ namespace Jiuyong
 			// toolStripContainer1.ContentPanel
 			// 
 			resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+			this.toolStripContainer1.ContentPanel.Controls.Add(this.NextMatchLabel);
+			this.toolStripContainer1.ContentPanel.Controls.Add(this.MatchFoundLabel);
 			this.toolStripContainer1.ContentPanel.Controls.Add(this.RegexTextBox);
 			this.toolStripContainer1.ContentPanel.Controls.Add(this.buttonExit);
 			this.toolStripContainer1.ContentPanel.Controls.Add(this.MatchesButton);
@@ -108,12 +113,26 @@ namespace Jiuyong
 			this.toolStripContainer1.ContentPanel.Controls.Add(this.label2);
 			this.toolStripContainer1.ContentPanel.Controls.Add(this.RegularExpressionLabel);
 			this.toolStripContainer1.ContentPanel.Controls.Add(this.InputTextBox);
+			this.toolStripContainer1.ContentPanel.Controls.Add(this.NoMatchFoundLabel);
 			resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
 			this.toolStripContainer1.Name = "toolStripContainer1";
 			// 
 			// toolStripContainer1.TopToolStripPanel
 			// 
 			this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStripApplication);
+			// 
+			// NextMatchLabel
+			// 
+			resources.ApplyResources(this.NextMatchLabel, "NextMatchLabel");
+			this.NextMatchLabel.BackColor = System.Drawing.Color.Transparent;
+			this.NextMatchLabel.Name = "NextMatchLabel";
+			// 
+			// MatchFoundLabel
+			// 
+			resources.ApplyResources(this.MatchFoundLabel, "MatchFoundLabel");
+			this.MatchFoundLabel.BackColor = System.Drawing.Color.Transparent;
+			this.MatchFoundLabel.ForeColor = System.Drawing.Color.Green;
+			this.MatchFoundLabel.Name = "MatchFoundLabel";
 			// 
 			// RegexTextBox
 			// 
@@ -270,6 +289,13 @@ namespace Jiuyong
 			this.InputTextBox.Enter += new System.EventHandler(this.TextBox_Enter);
 			this.InputTextBox.Leave += new System.EventHandler(this.TextBox_Leave);
 			// 
+			// NoMatchFoundLabel
+			// 
+			resources.ApplyResources(this.NoMatchFoundLabel, "NoMatchFoundLabel");
+			this.NoMatchFoundLabel.BackColor = System.Drawing.Color.Transparent;
+			this.NoMatchFoundLabel.ForeColor = System.Drawing.Color.Red;
+			this.NoMatchFoundLabel.Name = "NoMatchFoundLabel";
+			// 
 			// toolStripApplication
 			// 
 			resources.ApplyResources(this.toolStripApplication, "toolStripApplication");
@@ -425,6 +451,13 @@ namespace Jiuyong
 			this.toolStripButtonEnglish.Name = "toolStripButtonEnglish";
 			this.toolStripButtonEnglish.Click += new System.EventHandler(this.toolStripButtonLanguage_Click);
 			// 
+			// toolStripButtonChinese
+			// 
+			this.toolStripButtonChinese.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripButtonChinese.Name = "toolStripButtonChinese";
+			resources.ApplyResources(this.toolStripButtonChinese, "toolStripButtonChinese");
+			this.toolStripButtonChinese.Click += new System.EventHandler(this.toolStripButtonLanguage_Click);
+			// 
 			// toolStripButtonNative
 			// 
 			this.toolStripButtonNative.Checked = true;
@@ -433,13 +466,6 @@ namespace Jiuyong
 			this.toolStripButtonNative.Name = "toolStripButtonNative";
 			resources.ApplyResources(this.toolStripButtonNative, "toolStripButtonNative");
 			this.toolStripButtonNative.Click += new System.EventHandler(this.toolStripButtonLanguage_Click);
-			// 
-			// toolStripButtonChinese
-			// 
-			this.toolStripButtonChinese.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.toolStripButtonChinese.Name = "toolStripButtonChinese";
-			resources.ApplyResources(this.toolStripButtonChinese, "toolStripButtonChinese");
-			this.toolStripButtonChinese.Click += new System.EventHandler(this.toolStripButtonLanguage_Click);
 			// 
 			// openFileDialog
 			// 
@@ -520,7 +546,9 @@ namespace Jiuyong
 		private ToolStripButton toolStripButtonNative;
 		private ToolStripButton toolStripButtonEnglish;
 		private ToolStripButton toolStripButtonChinese;
-
+        private Label NoMatchFoundLabel;
+        private Label MatchFoundLabel;
+		private Label NextMatchLabel;
 	}
 }
 

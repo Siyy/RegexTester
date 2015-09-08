@@ -44,31 +44,31 @@ namespace Jiuyong
 		private RegexOptions GetSelectedRegexOptions()
 		{
 			RegexOptions none = RegexOptions.None;
-			if(this.IgnoreCaseChkBox.Checked)
+			if (this.IgnoreCaseChkBox.Checked)
 			{
 				none |= RegexOptions.IgnoreCase;
 			}
-			if(this.ExplicitCaptureChkBox.Checked)
+			if (this.ExplicitCaptureChkBox.Checked)
 			{
 				none |= RegexOptions.ExplicitCapture;
 			}
-			if(this.ECMAScriptChkBox.Checked)
+			if (this.ECMAScriptChkBox.Checked)
 			{
 				none |= RegexOptions.ECMAScript;
 			}
-			if(this.IgnorePatternWhitespaceChkBox.Checked)
+			if (this.IgnorePatternWhitespaceChkBox.Checked)
 			{
 				none |= RegexOptions.IgnorePatternWhitespace;
 			}
-			if(this.MultiLineChkBox.Checked)
+			if (this.MultiLineChkBox.Checked)
 			{
 				none |= RegexOptions.Multiline;
 			}
-			if(this.RightToLeftChkBox.Checked)
+			if (this.RightToLeftChkBox.Checked)
 			{
 				none |= RegexOptions.RightToLeft;
 			}
-			if(this.SingleLineChkBox.Checked)
+			if (this.SingleLineChkBox.Checked)
 			{
 				none |= RegexOptions.Singleline;
 			}
@@ -81,16 +81,19 @@ namespace Jiuyong
 			{
 				RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
 				MatchCollection matchs = new Regex(this.RegexTextBox.Text, selectedRegexOptions).Matches(this.InputTextBox.Text);
-				string str = "------- NEXT MATCH -------" + Environment.NewLine;
+				string str = NextMatchLabel.Text + Environment.NewLine;
 				StringBuilder builder = new StringBuilder(0x40);
-				foreach(Match match in matchs)
+				foreach (Match match in matchs)
 				{
 					builder.Append(match.Value + Environment.NewLine + str);
 				}
+
+				ShowMatch(null);
+
 				this.ResultsTextBox.ForeColor = Color.Black;
 				this.ResultsTextBox.Text = builder.ToString();
 			}
-			catch(ArgumentException exception)
+			catch (ArgumentException exception)
 			{
 				this.ResultsTextBox.ForeColor = Color.Red;
 				this.ResultsTextBox.Text = "There was an error in your regular expressions:\r\n" + exception.Message;
@@ -115,10 +118,13 @@ namespace Jiuyong
 			{
 				RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
 				Regex regex = new Regex(this.RegexTextBox.Text, selectedRegexOptions);
+
+				ShowMatch(null);
+
 				this.ResultsTextBox.ForeColor = Color.Black;
 				this.ResultsTextBox.Text = regex.Replace(this.InputTextBox.Text, this.ReplacementTextBox.Text);
 			}
-			catch(ArgumentException exception)
+			catch (ArgumentException exception)
 			{
 				this.ResultsTextBox.ForeColor = Color.Red;
 				this.ResultsTextBox.Text = "There was an error in your regular expression:" + Environment.NewLine + exception.Message;
@@ -144,14 +150,15 @@ namespace Jiuyong
 				RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
 				string[] strArray = new Regex(this.RegexTextBox.Text, selectedRegexOptions).Split(this.InputTextBox.Text);
 				StringBuilder builder = new StringBuilder(this.InputTextBox.Text.Length);
-				foreach(string str in strArray)
+				foreach (string str in strArray)
 				{
 					builder.Append(str + Environment.NewLine);
 				}
+				ShowMatch(null);
 				this.ResultsTextBox.ForeColor = Color.Black;
 				this.ResultsTextBox.Text = builder.ToString();
 			}
-			catch(ArgumentException exception)
+			catch (ArgumentException exception)
 			{
 				this.ResultsTextBox.ForeColor = Color.Red;
 				this.ResultsTextBox.Text = "There was an error in your regular expression:" + Environment.NewLine + exception.Message;
@@ -164,21 +171,46 @@ namespace Jiuyong
 			{
 				RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
 				Regex regex = new Regex(this.RegexTextBox.Text, selectedRegexOptions);
-				if(regex.IsMatch(this.InputTextBox.Text))
+				if (regex.IsMatch(this.InputTextBox.Text))
 				{
-					this.ResultsTextBox.Text = "MATCH FOUND";
-					this.ResultsTextBox.ForeColor = Color.Black;
+					//this.ResultsTextBox.Text = "MATCH FOUND";
+					//this.ResultsTextBox.ForeColor = Color.Black;
+					ShowMatch(true);
 				}
 				else
 				{
-					this.ResultsTextBox.Text = "NO MATCH FOUND";
-					this.ResultsTextBox.ForeColor = Color.Red;
+					//this.ResultsTextBox.Text = "NO MATCH FOUND";
+					//this.ResultsTextBox.ForeColor = Color.Red;
+					ShowMatch(false);
 				}
 			}
-			catch(ArgumentException exception)
+			catch (ArgumentException exception)
 			{
 				this.ResultsTextBox.ForeColor = Color.Red;
 				this.ResultsTextBox.Text = "There was an error in your regular expression:" + Environment.NewLine + exception.Message;
+			}
+		}
+
+		private void ShowMatch(bool? matchFound)
+		{
+			if (null == matchFound)
+			{
+				NextMatchLabel.Visible = false;
+				MatchFoundLabel.Visible = false;
+				NoMatchFoundLabel.Visible = false;
+			}
+			else
+			{
+				if (matchFound.Value)
+				{
+					MatchFoundLabel.Visible = true;
+					NoMatchFoundLabel.Visible = false;
+				}
+				else
+				{
+					MatchFoundLabel.Visible = false;
+					NoMatchFoundLabel.Visible = true;
+				}
 			}
 		}
 
@@ -190,7 +222,7 @@ namespace Jiuyong
 		private void ContentTextBox_TextChanged(object sender, EventArgs e)
 		{
 			textBox = sender as RichTextBox;
-			if(textBox != null)
+			if (textBox != null)
 			{
 				onContentChanged();
 				CheckEditerCanDo();
@@ -201,7 +233,7 @@ namespace Jiuyong
 		private void SaveContent()
 		{
 
-			if(contentChanged&&this.Text.EndsWith(contentChangedTag))
+			if (contentChanged && this.Text.EndsWith(contentChangedTag))
 			{
 				this.Text = this.Text.Substring(0, this.Text.Length - 2);
 				Jiuyong.Properties.Settings.Default.Save();
@@ -211,7 +243,7 @@ namespace Jiuyong
 
 		private void onContentChanged()
 		{
-			if(!contentChanged)
+			if (!contentChanged)
 			{
 				contentChanged = true;
 				this.Text += contentChangedTag;
@@ -227,7 +259,7 @@ namespace Jiuyong
 
 			//SetAnchor();
 
-			
+			ShowMatch(null);
 		}
 
 		private void SetAnchor()
@@ -251,7 +283,7 @@ namespace Jiuyong
 
 		private void LockToolStripButton_Click(object sender, EventArgs e)
 		{
-			if(LockToolStripButton.Checked)
+			if (LockToolStripButton.Checked)
 			{
 				toolStripApplication.GripStyle = ToolStripGripStyle.Hidden;
 			}
@@ -261,10 +293,10 @@ namespace Jiuyong
 			}
 		}
 
-		RichTextBox textBox =null;
+		RichTextBox textBox = null;
 		private void undoToolStripButton_Click(object sender, EventArgs e)
 		{
-			if(textBox != null && textBox.ReadOnly == false)
+			if (textBox != null && textBox.ReadOnly == false)
 			{
 				textBox.Undo();
 			}
@@ -272,7 +304,7 @@ namespace Jiuyong
 
 		private void redoToolStripButton_Click(object sender, EventArgs e)
 		{
-			if(textBox != null && textBox.ReadOnly == false)
+			if (textBox != null && textBox.ReadOnly == false)
 			{
 				textBox.Redo();
 			}
@@ -281,7 +313,7 @@ namespace Jiuyong
 		private void TextBox_Enter(object sender, EventArgs e)
 		{
 			textBox = sender as RichTextBox;
-			if(textBox != null)
+			if (textBox != null)
 			{
 				textBox.TextChanged += ContentTextBox_TextChanged;
 				CheckEditerCanDo();
@@ -296,11 +328,11 @@ namespace Jiuyong
 
 		private void Form_Closing(object sender, FormClosingEventArgs e)
 		{
-			if(contentChanged)
+			if (contentChanged)
 			{
-				DialogResult dr = MessageBox.Show("内容已发生更改，是否保存？",this.Text,MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question);
+				DialogResult dr = MessageBox.Show("内容已发生更改，是否保存？", this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-				switch(dr)
+				switch (dr)
 				{
 					case DialogResult.Abort:
 						break;
@@ -311,7 +343,7 @@ namespace Jiuyong
 						break;
 					case DialogResult.No:
 						return;
-						//break;
+					//break;
 					case DialogResult.None:
 						break;
 					case DialogResult.OK:
@@ -329,7 +361,7 @@ namespace Jiuyong
 
 		private void TextBox_Leave(object sender, EventArgs e)
 		{
-			if(textBox != null)
+			if (textBox != null)
 			{
 				textBox.TextChanged -= ContentTextBox_TextChanged;
 			}
@@ -338,16 +370,16 @@ namespace Jiuyong
 		private void toolStripButtonLanguage_Click(object sender, EventArgs e)
 		{
 			ToolStripButton tsb = sender as ToolStripButton;
-			if(tsb != null&&!tsb.Checked)
+			if (tsb != null && !tsb.Checked)
 			{
 				CultureInfo lan = tsb.Tag as CultureInfo;
-				if(lan == null)
+				if (lan == null)
 					lan = CultureInfo.InvariantCulture;
 				this.WindowState = FormWindowState.Normal;
-				Core.SetLanguage( this, lan);
-				foreach(var btn in languageButtons)
+				Core.SetLanguage(this, lan);
+				foreach (var btn in languageButtons)
 				{
-					if(tsb == btn)
+					if (tsb == btn)
 					{
 						btn.Checked = true;
 					}

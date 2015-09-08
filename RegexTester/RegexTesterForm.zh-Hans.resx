@@ -117,50 +117,77 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="toolStripContainer1.BottomToolStripPanel.ToolTip" xml:space="preserve">
-    <value />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="NextMatchLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 12</value>
   </data>
-  <data name="RegexTextBox.ToolTip" xml:space="preserve">
-    <value />
+  <data name="NextMatchLabel.Text" xml:space="preserve">
+    <value>------- &lt;下一个匹配项&gt; -------</value>
+  </data>
+  <data name="MatchFoundLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 343</value>
+  </data>
+  <data name="MatchFoundLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 12</value>
+  </data>
+  <data name="MatchFoundLabel.Text" xml:space="preserve">
+    <value>成功匹配</value>
   </data>
   <data name="buttonExit.Text" xml:space="preserve">
     <value>退出程序</value>
   </data>
-  <data name="buttonExit.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="MatchesButton.Text" xml:space="preserve">
     <value>多次匹配</value>
-  </data>
-  <data name="MatchesButton.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="SplitButton.Text" xml:space="preserve">
     <value>拆分构造</value>
   </data>
-  <data name="SplitButton.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="ReplaceButton.Text" xml:space="preserve">
     <value>替换构造</value>
-  </data>
-  <data name="ReplaceButton.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="TestRegexButton.Text" xml:space="preserve">
     <value>匹配结果</value>
   </data>
-  <data name="TestRegexButton.ToolTip" xml:space="preserve">
-    <value />
+  <data name="OptionsGroup.Text" xml:space="preserve">
+    <value>正则表达式选项：</value>
   </data>
-  <data name="ResultsTextBox.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>匹配结果：</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 12</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>替换表达式：</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 12</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>所需匹配文本内容：</value>
+  </data>
+  <data name="RegularExpressionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 12</value>
+  </data>
+  <data name="RegularExpressionLabel.Text" xml:space="preserve">
+    <value>正则表达式：</value>
+  </data>
+  <data name="NoMatchFoundLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 343</value>
+  </data>
+  <data name="NoMatchFoundLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 12</value>
+  </data>
+  <data name="NoMatchFoundLabel.Text" xml:space="preserve">
+    <value>无法找到合格的匹配项</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ExplicitCaptureChkBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ExplicitCaptureChkBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 16</value>
   </data>
@@ -267,91 +294,22 @@ Multiline 标志一起使用。将 ECMAScript 同任何其他标志一起使用�
     RightToLeft 只更改搜索方向。它不会反转所搜索的子字符串。预测先行和回顾后发
 断言不改变：预测先行向右搜索；回顾后发向左搜索。</value>
   </data>
-  <data name="flowLayoutPanel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="OptionsGroup.Text" xml:space="preserve">
-    <value>正则表达式选项：</value>
-  </data>
-  <data name="ReplacementTextBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 12</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>匹配结果：</value>
-  </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 12</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>替换表达式：</value>
-  </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 12</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>所需匹配文本内容：</value>
-  </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RegularExpressionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 12</value>
-  </data>
-  <data name="RegularExpressionLabel.Text" xml:space="preserve">
-    <value>正则表达式：</value>
-  </data>
-  <data name="RegularExpressionLabel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="InputTextBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.ContentPanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.LeftToolStripPanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.RightToolStripPanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="toolStripButtonEnglish.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVDhPpZP7S1NxGMbPPxKaXVUkMEq8IpKUCoY/hGgI
-        ymqkDYYXcCjDZOANURSjCNGFQUTsl4GXVMxKk62YU4fXQpaIlygHQxBRH8/zwvyaIAYe+HLgnPN8nue9
-        HA3nvDTq63oW/jm13XOwvPTB3DYFY5MH+bXfcN8ygfTSMSSXfESicQDxBqdYHwH29g9w2tnZ3UcguIvN
-        rR3417exuBJE5N1n/wfwLgXEOc38Bc6xNRHb+/y4nm49G0Bnit2zf9H6bkliE/jKuYxrd6oVgDWfjB+K
-        TWeKMyrGEVfowITvD9re/9ABVQrAhh0HHK+ZselMMaN/mvwtDb+aVqkA7HYIwIj3ysfluPTorJnP6Ezx
-        oHsD1s5ZXEktUwCOioB5f1CEPR9+wTG6iuiserTo8dkwng7HT/R+XUPF8xlcTjErAOdMcW6NW8STiwG8
-        7vej8oUPN/PsEv3t8Ao0TZP3T1u8uJRkUgAuSYHtO97oLxmXd5t9Ho8aPTK+GzntqNfrLm2fFoihwYOI
-        xGIF4KjoGBLzY1OrF9k6OOFxnwDC4wxIMX1G0pMhgVyMNyoA13PAtS7OrJk1PrC69LUdQWxuF6IybHrX
-        LRI7JrtZdoDAo1XmbjMyD+tjSXxGcXRmnYg5ttD9QuxDhN0uUgDOmbvNTpPOJaGAo2K36cyaGZvOFIfd
-        KlSA8/zRh9ABIDUG+1JpAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="toolStripApplication.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripContainer1.TopToolStripPanel.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>正则表达式编辑器</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>
