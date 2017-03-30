@@ -77,26 +77,31 @@ namespace Jiuyong
 
 		private void MatchesButton_Click(object sender, EventArgs e)
 		{
-			try
+			this.ResultsTextBox.ForeColor = Color.Black;
+			this.ResultsTextBox.Text = "";
+			foreach (var text in GetInputTexts())
 			{
-				RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
-				MatchCollection matchs = new Regex(this.RegexTextBox.Text, selectedRegexOptions).Matches(this.InputTextBox.Text);
-				string str = NextMatchLabel.Text + Environment.NewLine;
-				StringBuilder builder = new StringBuilder(0x40);
-				foreach (Match match in matchs)
+				try
 				{
-					builder.Append(match.Value + Environment.NewLine + str);
+					RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
+					MatchCollection matchs = new Regex(this.RegexTextBox.Text, selectedRegexOptions).Matches(text);
+					string str = NextMatchLabel.Text + Environment.NewLine;
+					StringBuilder builder = new StringBuilder(0x40);
+					foreach (Match match in matchs)
+					{
+						builder.Append(match.Value + Environment.NewLine + str);
+					}
+
+					ShowMatch(null);
+
+					this.ResultsTextBox.ForeColor = Color.Black;
+					this.ResultsTextBox.Text += "\r\n" + builder.ToString() + "====\r\n";
 				}
-
-				ShowMatch(null);
-
-				this.ResultsTextBox.ForeColor = Color.Black;
-				this.ResultsTextBox.Text = builder.ToString();
-			}
-			catch (ArgumentException exception)
-			{
-				this.ResultsTextBox.ForeColor = Color.Red;
-				this.ResultsTextBox.Text = "There was an error in your regular expressions:\r\n" + exception.Message;
+				catch (ArgumentException exception)
+				{
+					this.ResultsTextBox.ForeColor = Color.Red;
+					this.ResultsTextBox.Text += "There was an error in your regular expressions:\r\n" + exception.Message + "\r\n====";
+				}
 			}
 		}
 
@@ -122,7 +127,7 @@ namespace Jiuyong
 				ShowMatch(null);
 
 				this.ResultsTextBox.ForeColor = Color.Black;
-				this.ResultsTextBox.Text = regex.Replace(this.InputTextBox.Text, this.ReplacementTextBox.Text);
+				this.ResultsTextBox.Text = regex.Replace(GetInputText(), this.ReplacementTextBox.Text);
 			}
 			catch (ArgumentException exception)
 			{
@@ -149,7 +154,7 @@ namespace Jiuyong
 			{
 				RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
 				string[] strArray = new Regex(this.RegexTextBox.Text, selectedRegexOptions).Split(this.InputTextBox.Text);
-				StringBuilder builder = new StringBuilder(this.InputTextBox.Text.Length);
+				StringBuilder builder = new StringBuilder(GetInputText().Length);
 				foreach (string str in strArray)
 				{
 					builder.Append(str + Environment.NewLine);
@@ -171,7 +176,7 @@ namespace Jiuyong
 			{
 				RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
 				Regex regex = new Regex(this.RegexTextBox.Text, selectedRegexOptions);
-				if (regex.IsMatch(this.InputTextBox.Text))
+				if (regex.IsMatch(GetInputText()))
 				{
 					//this.ResultsTextBox.Text = "MATCH FOUND";
 					//this.ResultsTextBox.ForeColor = Color.Black;
@@ -390,6 +395,18 @@ namespace Jiuyong
 				}
 				//SetAnchor();
 			}
+		}
+
+		public string GetInputText()
+		{
+			var r = this.InputTextBox.Text;
+			return r;
+		}
+		public IEnumerable<string> GetInputTexts()
+		{
+			var r = GetInputText();
+			var rs = r.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+			return rs;
 		}
 	}
 }
