@@ -13,7 +13,7 @@ namespace Jiuyong
         [STAThread]
         static void Main()
         {
-            if (DateTime.Now.Year < 2017)
+            if (DateTime.Now.Year < 2020)
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

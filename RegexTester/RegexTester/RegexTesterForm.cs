@@ -167,15 +167,31 @@ namespace Jiuyong
 
 		private void TestRegexButton_Click(object sender, EventArgs e)
 		{
+			ResultsTextBox.Clear();
 			try
 			{
 				RegexOptions selectedRegexOptions = this.GetSelectedRegexOptions();
 				Regex regex = new Regex(this.RegexTextBox.Text, selectedRegexOptions);
-				if (regex.IsMatch(this.InputTextBox.Text))
+				var mch = regex.Match(this.InputTextBox.Text);
+				if (mch.Success)
 				{
 					//this.ResultsTextBox.Text = "MATCH FOUND";
 					//this.ResultsTextBox.ForeColor = Color.Black;
 					ShowMatch(true);
+					var sb = new StringBuilder();
+					if (mch.Groups.Count > 0)
+					{
+						sb.AppendLine($"Groups[{mch.Groups.Count}]:");
+						sb.AppendLine("-------------------------------");
+					}
+					foreach (var mgo in mch.Groups)
+					{
+						Group mg = mgo as Group;
+						var idx = (mg.Success, mg.Index, End: (mg.Index + mg.Length));
+						var idxTxt = idx.Success ? $"{idx.Index:0000} - {idx.End:0000}" : "   fail!   ";
+						sb.AppendLine($"[{idxTxt}]<{mg.Name}>:{mg.Value}");
+					}
+					ResultsTextBox.Text = sb.ToString();
 				}
 				else
 				{
